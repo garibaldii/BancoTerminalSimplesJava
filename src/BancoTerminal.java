@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class BancoTerminal {
     // Crie o programa chamado BancoTerminal.java para implementar o algorítmo
     // conforme abaixo:
@@ -21,10 +23,10 @@ public class BancoTerminal {
     // igual a 15 e valor solicitado igual a 22 e exiba o resultado;
 
     double saldo = 25;
-    double valorSolicitado = 18;
 
-    public void sacar() {
-        if (saldo > this.valorSolicitado) {
+
+    public void sacar(double valorSolicitado) {
+        if (saldo > valorSolicitado) {
             saldo -= valorSolicitado;
             System.out.println("Saque realizado com sucesso. Saldo Atual: " + saldo);
         } else {
@@ -32,23 +34,23 @@ public class BancoTerminal {
         }
     }
 
-    public void sacar2(){
-        saldo = 15;
-        valorSolicitado = 22;
-        if (saldo > this.valorSolicitado) {
-            saldo -= valorSolicitado;
-            System.out.println("Saque realizado com sucesso. Saldo Atual: " + saldo);
-        } else {
-            System.out.println("Saldo Insuficiente");
-        }
-    }
+
 
     public static void main(String[] args) throws Exception {
+        Scanner input = new Scanner(System.in);
+
         BancoTerminal OperacaoSaque = new BancoTerminal();
 
-        OperacaoSaque.sacar();
+        System.out.println("Quanto deseja sacar: ");
+        
+        int operacao1 = input.nextInt();
 
-        OperacaoSaque.sacar2();
+
+        OperacaoSaque.sacar(operacao1);
+
+    
+
+
 
         
         
